@@ -1,0 +1,33 @@
+{
+  "name": "redux-injector",
+  "version": "0.0.1",
+  "description": "Allows dynamically injecting reducers into a redux store at runtime.",
+  "main": "lib/ReduxInjector.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel ./src --ignore=*.spec.js --out-dir ./lib --presets es2015,react,stage-2",
+    "lint": "eslint src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/randallknutson/redux-injector.git"
+  },
+  "keywords": [
+    "redux",
+    "react"
+  ],
+  "author": "Randall Knutson <randall@knutson.io>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/randallknutson/redux-injector/issues"
+  },
+  "homepage": "https://github.com/randallknutson/redux-injector#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-core": "^6.18.2",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-react": "^6.16.0",
+    "babel-preset-stage-2": "^6.18.0",
+    "eslint": "^3.9.1"
+  }
+}
