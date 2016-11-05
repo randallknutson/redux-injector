@@ -1,6 +1,6 @@
 {
   "name": "redux-injector",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Allows dynamically injecting reducers into a redux store at runtime.",
   "main": "lib/ReduxInjector.js",
   "scripts": {
