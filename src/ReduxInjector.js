@@ -1,4 +1,4 @@
-import { createStore, compose, combineReducers } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { set, has } from 'lodash';
 
 let store = {};
@@ -26,16 +26,19 @@ function combineReducersRecurse(reducers) {
   });
 }
 
-export function createInjectStore(initialReducers, initialState = {}, enhancers = [], overrides = {}) {
-  // Allow overriding the combineReducers function such as with redux-immutable.
-  if (overrides.hasOwnProperty('combineReducers') && typeof overrides.combineReducers === 'function') {
-    combine = overrides.combineReducers;
+export function createInjectStore(initialReducers, ...args) {
+  // If last item is an object, it is overrides.
+  if (typeof args[args.length - 1] === 'object') {
+    const overrides = args.pop();
+    // Allow overriding the combineReducers function such as with redux-immutable.
+    if (overrides.hasOwnProperty('combineReducers') && typeof overrides.combineReducers === 'function') {
+      combine = overrides.combineReducers;
+    }
   }
 
   store = createStore(
     combineReducersRecurse(initialReducers),
-    initialState,
-    compose(...enhancers)
+    ...args
   );
 
   store.injectedReducers = initialReducers;
