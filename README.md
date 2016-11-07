@@ -67,7 +67,7 @@ injectReducer('date.form', formReducerFunction);
 The injector uses lodash.set so any paths that are supported by it can be used and any missing objects will be created.
 
 ## Immutable.js
-Redux Injector by default uses combineReducers from redux. However, if you are using immutable.js for your states, you need to use  ```combineReducers``` from ```redux-immutable```. To do this, pass in an override at the end of the arguments with the combineReducers function.
+Redux Injector by default uses ```combineReducers``` from redux. However, if you are using immutable.js for your states, you need to use  ```combineReducers``` from ```redux-immutable```. To do this, pass in an override at the end of the arguments with the ```combineReducers``` function.
 
 ```javascript
 import { createInjectStore } from 'redux-injector';
